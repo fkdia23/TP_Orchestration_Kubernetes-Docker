@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clientapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs
+  template:
+    metadata:
+      labels:
+        app: nodejs
+    spec:
+      containers:
+      - name: nodejs
+        image: 23723/clientapptest # Remplacez par votre image Docker
+        ports:
+        - containerPort: 3003  # Ou le port que votre app utilise
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-loadbalancer
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 3003
+      targetPort: 3003
+  selector:
+    app: nodejs # Assurez-vous que cela correspond à votre déploiement
+    
