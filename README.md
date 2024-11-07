@@ -20,7 +20,6 @@ Le projet vise à déployer une application web basique où un client Node.js in
 ### Conteneurisation
 - **Docker**:
   - Créer un `Dockerfile` pour l'application Node.js.
-  - Utiliser `docker-compose` pour faciliter le développement local en définissant les services.
 
 ### Orchestration
 - **Kubernetes**:
