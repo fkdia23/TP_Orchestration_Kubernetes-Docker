@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nodejs
-        image: 23723/clientapptest # Remplacez par votre image Docker
+        image: 23723/todoapp:1.0 # Remplacez par votre image Docker (Docker hub)
         ports:
         - containerPort: 3003  # Ou le port que votre app utilise
 ---
